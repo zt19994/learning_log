@@ -1,3 +1,6 @@
+#!usr/bin/env python3
+# -*- coding:utf-8 -*-
+
 """定义learning_logs的URL模式"""
 from django.conf.urls import url
 from .import views

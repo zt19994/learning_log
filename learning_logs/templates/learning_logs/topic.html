@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>学习笔记</title>
+</head>
 {% extends 'learning_logs/base.html' %}
 
 {% block header %}
-<h2>{{ topic}}</h2>
+<h2>{{ 主题 }}</h2>
 {% endblock header %}
 
 {% block content %}
@@ -15,16 +24,19 @@
         <div class="panel-heading">
             <h3>
                 {{ entry.date_added|date:'M d, Y H:i ' }}
+                <small>
                 <a href="{% url 'learning_logs:edit_entry' entry.id %}">
                     编辑条目</a>
+                </small>
             </h3>
         </div>
+        {{ entry.text|linebreaks }}
         <div class="panel-body">
-            {{ entry.text|linebreaks }}
         </div><!-- panel -->
     </div>
     {% empty %}
-        There are no entries for this topic yet.
+        目前还没有这个主题的条目。
     {% endfor %}
 
 {% endblock content %}
+<html/>

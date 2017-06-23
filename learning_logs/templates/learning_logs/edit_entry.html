@@ -1,15 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>学习笔记</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
 {% extends "learning_logs/base.html" %}
 {% load bootstrap3 %}
 
 {% block header %}
 <h2>
-    <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+    <a href="{% url 'learning_logs:topic' topic.id %}">{{ 主题 }}</a>
 </h2>
 {% endblock header %}
 
 {% block content %}
 
-<h3>Edit entry:</h3>
+<h3>编辑条目:</h3>
 <form action="{% url 'learning_logs:edit_entry' entry.id %}" method='post' class="form">
 
     {% csrf_token %}
@@ -21,3 +33,4 @@
 </form>
 
 {% endblock content %}
+<html/>

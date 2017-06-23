@@ -1,3 +1,5 @@
+#!usr/bin/env python3
+# -*- coding:utf-8 -*-
 """为应用程序users定义URL模式"""
 
 from django.conf.urls import url
